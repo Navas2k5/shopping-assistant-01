@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Register | ShopAI</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          th:href="@{/css/register.css}">
+
+</head>
+
+<body>
+
+<div class="background-glow"></div>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg top-navbar">
+
+    <div class="container">
+
+        <a class="navbar-brand logo"
+           th:href="@{/login}">
+
+            Shop<span>AI</span>
+
+        </a>
+
+        <button class="navbar-toggler bg-warning"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end"
+             id="navbarNav">
+
+            <ul class="navbar-nav align-items-center">
+
+                <li class="nav-item me-3">
+
+                    <a class="nav-link"
+                       th:href="@{/about}">
+
+                        About
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="btn btn-outline-warning rounded-pill px-4"
+                       th:href="@{/login}">
+
+                        Login
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="hero-card">
+
+            <span class="hero-badge">
+
+                <i class="bi bi-stars"></i>
+
+                AI Powered Shopping
+
+            </span>
+
+            <h1>
+
+                Create your
+                <span>ShopAI</span>
+                Account
+
+            </h1>
+
+            <p>
+
+                Tell us your shopping preferences once,
+                and ShopAI will personalize recommendations,
+                find the best products within your budget,
+                and help you make smarter buying decisions.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= REGISTER FORM ================= -->
+
+<div class="container pb-5">
+
+    <div class="register-card">
+
+        <div class="text-center mb-5">
+
+            <h2>
+
+                <i class="bi bi-person-plus-fill text-warning"></i>
+
+                Register
+
+            </h2>
+
+            <p>
+
+                Fill in your information to start your
+                personalized AI shopping journey.
+
+            </p>
+
+        </div>
+        <div
+                th:if="${error}"
+                class="alert alert-danger rounded-4">
+
+            <i class="bi bi-exclamation-triangle-fill"></i>
+
+            <span th:text="${error}"></span>
+
+        </div>
+
+        <form
+                th:action="@{/register}"
+                method="post">
+
+            <div class="row">
+
+                <!-- Name -->
+
+                <div class="col-md-6 mb-4">
+
+                    <label class="form-label">
+
+                        <i class="bi bi-person-fill"></i>
+
+                        Full Name
+
+                    </label>
+
+                    <input
+                            type="text"
+                            class="form-control custom-input"
+                            name="name"
+                            placeholder="Enter your name"
+                            required>
+
+                </div>
+
+                <!-- Email -->
+
+                <div class="col-md-6 mb-4">
+
+                    <label class="form-label">
+
+                        <i class="bi bi-envelope-fill"></i>
+
+                        Email
+
+                    </label>
+
+                    <input
+                            type="email"
+                            class="form-control custom-input"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+
+                </div>
+
+                <!-- Password -->
+
+                <div class="col-md-6 mb-4">
+
+                    <label class="form-label">
+
+                        <i class="bi bi-lock-fill"></i>
+
+                        Password
+
+                    </label>
+
+                    <input
+                            type="password"
+                            class="form-control custom-input"
+                            name="password"
+                            placeholder="Create a password"
+                            required>
+
+                </div>
+
+                <!-- Budget -->
+
+                <div class="col-md-6 mb-4">
+
+                    <label class="form-label">
+
+                        <i class="bi bi-cash-stack"></i>
+
+                        Maximum Budget
+
+                    </label>
+
+                    <input
+                            type="number"
+                            class="form-control custom-input"
+                            name="maxBudget"
+                            min="0"
+                            step="0.01"
+                            placeholder="Enter maximum budget"
+                            required>
+
+                </div>
+                <!-- Preferred Category -->
+
+                <div class="col-md-6 mb-4">
+
+                    <label class="form-label">
+
+                        <i class="bi bi-grid-fill"></i>
+
+                        Preferred Category
+
+                    </label>
+
+                    <select
+                            id="category"
+                            class="form-select custom-input"
+                            name="preferredCategory"
+                            required>
+
+                        <option value="">Select Category</option>
+
+                        <option
+                                th:each="category : ${categories}"
+                                th:value="${category}"
+                                th:text="${category}">
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Preferred Brand -->
+
+                <div class="col-md-6 mb-4">
+
+                    <label class="form-label">
+
+                        <i class="bi bi-award-fill"></i>
+
+                        Preferred Brand
+
+                    </label>
+
+                    <select
+                            id="brand"
+                            class="form-select custom-input"
+                            name="preferredBrand"
+                            required>
+
+                        <option value="">Select Brand</option>
+
+                        <option
+                                th:each="brand : ${brands}"
+                                th:value="${brand}"
+                                th:text="${brand}">
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- Buttons -->
+
+            <div class="text-center mt-4">
+
+                <button
+                        type="submit"
+                        class="btn btn-warning btn-lg rounded-pill px-5 me-3">
+
+                    <i class="bi bi-person-plus-fill"></i>
+
+                    Create Account
+
+                </button>
+
+                <a
+                        th:href="@{/login}"
+                        class="btn btn-outline-warning btn-lg rounded-pill px-5">
+
+                    <i class="bi bi-box-arrow-in-right"></i>
+
+                    Back to Login
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer-section">
+
+    <div class="container text-center">
+
+        <h4>
+
+            Shop<span>AI</span>
+
+        </h4>
+
+        <p>
+
+            AI Powered Shopping Assistant
+
+        </p>
+
+        <small>
+
+            Developed by Muhammed Navas
+
+            <br>
+
+            Computer Science Engineering
+
+        </small>
+
+    </div>
+
+</footer>
+
+<!-- ================= CATEGORY -> BRAND ================= -->
+
+<script>
+
+    const category = document.getElementById("category");
+    const brand = document.getElementById("brand");
+
+    console.log("Category =", category);
+    console.log("Brand =", brand);
+
+    category.addEventListener("change", function () {
+
+        console.log("Selected =", this.value);
+
+        fetch("/brands?category=" + encodeURIComponent(this.value))
+            .then(response => {
+                console.log("Response Status =", response.status);
+                return response.json();
+            })
+            .then(data => {
+
+                console.log("Received =", data);
+
+                brand.innerHTML = "";
+
+                const first = document.createElement("option");
+                first.value = "";
+                first.textContent = "Select Brand";
+                brand.appendChild(first);
+
+                data.forEach(function(item){
+
+                    const option = document.createElement("option");
+                    option.value = item;
+                    option.textContent = item;
+
+                    brand.appendChild(option);
+
+                });
+
+            });
+
+    });
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

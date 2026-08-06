@@ -1,0 +1,909 @@
+/* =====================================================
+                    SHOP AI LANDING PAGE
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+
+    --yellow:#FFC107;
+    --yellow-dark:#F9A825;
+    --black:#111111;
+    --card:#1d1d1d;
+    --white:#ffffff;
+    --gray:#d7d7d7;
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:
+            radial-gradient(circle at top left,#FFE08255 0%,transparent 30%),
+            radial-gradient(circle at bottom right,#FFC10733 0%,transparent 30%),
+            linear-gradient(135deg,#111,#1b1b1b);
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+/* ===========================
+            Navbar
+=========================== */
+
+.custom-navbar{
+
+    background:rgba(17,17,17,.75);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,193,7,.15);
+
+    padding:18px 0;
+
+}
+
+.logo{
+
+    color:white !important;
+
+    font-size:34px;
+
+    font-weight:800;
+
+}
+
+.logo span{
+
+    color:var(--yellow);
+
+}
+
+.nav-link{
+
+    color:white !important;
+
+    font-weight:600;
+
+    margin-right:18px;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:var(--yellow) !important;
+
+}
+
+/* ===========================
+            Hero
+=========================== */
+
+.hero-section{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding-top:100px;
+
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    padding:10px 18px;
+
+    background:rgba(255,193,7,.15);
+
+    border:1px solid rgba(255,193,7,.4);
+
+    border-radius:50px;
+
+    color:#FFD54F;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.hero-section h1{
+
+    font-size:65px;
+
+    font-weight:800;
+
+    line-height:1.2;
+
+}
+
+.hero-section h1 span{
+
+    color:var(--yellow);
+
+}
+
+.hero-section p{
+
+    margin-top:25px;
+
+    color:#dddddd;
+
+    line-height:1.9;
+
+    font-size:18px;
+
+}
+
+.hero-buttons{
+
+    margin-top:35px;
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-buttons .btn{
+
+    padding:14px 34px;
+
+    font-weight:700;
+
+    border-radius:50px;
+
+}
+
+/* ===========================
+        Hero Right Card
+=========================== */
+
+.hero-card{
+
+    position:relative;
+
+    background:rgba(255,255,255,.08);
+
+    border:2px solid rgba(255,193,7,.18);
+
+    border-radius:30px;
+
+    padding:45px;
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+
+            0 20px 50px rgba(0,0,0,.35),
+
+            0 0 25px rgba(255,193,7,.18);
+
+    overflow:hidden;
+
+    animation:slideUp .9s ease;
+
+}
+
+.hero-icon{
+
+    font-size:65px;
+
+    color:var(--yellow);
+
+    margin-bottom:25px;
+
+}
+
+.hero-card h2{
+
+    font-weight:700;
+
+    margin-bottom:22px;
+
+}
+
+.hero-card ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.hero-card li{
+
+    margin-bottom:15px;
+
+    color:#e7e7e7;
+
+    font-size:17px;
+
+}
+
+/* ===========================
+      Floating Circles
+=========================== */
+
+.floating-circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:rgba(255,193,7,.15);
+
+    animation:floatCircle 6s infinite ease-in-out;
+
+}
+
+.circle1{
+
+    width:120px;
+
+    height:120px;
+
+    top:-40px;
+
+    right:-40px;
+
+}
+
+.circle2{
+
+    width:70px;
+
+    height:70px;
+
+    bottom:20px;
+
+    left:-20px;
+
+}
+
+@keyframes floatCircle{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+}
+
+@keyframes slideUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* =====================================================
+                FEATURES SECTION
+===================================================== */
+
+.features-section{
+
+    padding:100px 0;
+
+}
+
+.section-heading span{
+
+    display:inline-block;
+
+    color:var(--yellow);
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:15px;
+
+}
+
+.section-heading h2{
+
+    font-size:48px;
+
+    font-weight:800;
+
+    color:white;
+
+}
+
+.section-heading p{
+
+    margin-top:18px;
+
+    color:#d8d8d8;
+
+    font-size:18px;
+
+}
+
+/* ===========================
+        Feature Card
+=========================== */
+
+.feature-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(16px);
+
+    border:2px solid rgba(255,193,7,.15);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    height:100%;
+
+    text-align:center;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--yellow);
+
+    box-shadow:
+
+            0 18px 40px rgba(255,193,7,.25);
+
+}
+
+.feature-card i{
+
+    font-size:52px;
+
+    color:var(--yellow);
+
+    margin-bottom:25px;
+
+}
+
+.feature-card h4{
+
+    color:white;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.feature-card p{
+
+    color:#d7d7d7;
+
+    line-height:1.8;
+
+}
+
+/* =====================================================
+                TECHNOLOGY SECTION
+===================================================== */
+
+.technology-section{
+
+    padding:90px 0;
+
+}
+
+.tech-card{
+
+    background:white;
+
+    color:#111;
+
+    border-radius:22px;
+
+    padding:30px 15px;
+
+    text-align:center;
+
+    height:100%;
+
+    transition:.35s;
+
+    box-shadow:
+
+            0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.tech-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+
+            0 18px 40px rgba(255,193,7,.35);
+
+}
+
+.tech-card i{
+
+    font-size:48px;
+
+    color:#F9A825;
+
+    margin-bottom:18px;
+
+}
+
+.tech-card h5{
+
+    font-weight:700;
+
+    margin:0;
+
+}
+
+/* =====================================================
+                    FOOTER
+===================================================== */
+
+.footer-section{
+
+    margin-top:90px;
+
+    padding:50px 0;
+
+    border-top:1px solid rgba(255,193,7,.18);
+
+    background:rgba(0,0,0,.18);
+
+}
+
+.footer-section h4{
+
+    font-size:38px;
+
+    font-weight:800;
+
+    color:white;
+
+}
+
+.footer-section h4 span{
+
+    color:var(--yellow);
+
+}
+
+.footer-section p{
+
+    color:#d7d7d7;
+
+    margin-top:15px;
+
+}
+
+.footer-section small{
+
+    color:#a8a8a8;
+
+    line-height:1.8;
+
+}
+
+/* =====================================================
+                BUTTON HOVER
+===================================================== */
+
+.btn-warning{
+
+    background:linear-gradient(90deg,#FFE082,#FFC107);
+
+    border:none;
+
+    color:#111;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.btn-warning:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+            0 12px 30px rgba(255,193,7,.45);
+
+}
+
+.btn-outline-warning{
+
+    border:2px solid var(--yellow);
+
+    color:var(--yellow);
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.btn-outline-warning:hover{
+
+    background:var(--yellow);
+
+    color:#111;
+
+}
+
+.btn-outline-light{
+
+    transition:.35s;
+
+}
+
+.btn-outline-light:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* =====================================================
+                    LOGIN / REGISTER MODALS
+===================================================== */
+
+.custom-modal{
+
+    background:rgba(25,25,25,.96);
+
+    border:2px solid rgba(255,193,7,.25);
+
+    border-radius:28px;
+
+    backdrop-filter:blur(18px);
+
+    color:white;
+
+    animation:modalPop .35s ease;
+
+}
+
+@keyframes modalPop{
+
+    from{
+
+        opacity:0;
+        transform:scale(.92);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+
+.custom-modal .modal-header{
+
+    padding:22px 28px;
+
+}
+
+.custom-modal .modal-title{
+
+    font-weight:700;
+
+}
+
+.custom-modal .modal-body{
+
+    padding:30px;
+
+}
+
+.custom-modal .modal-footer{
+
+    padding:20px 30px 30px;
+
+}
+
+/* ===========================
+        Labels
+=========================== */
+
+.custom-modal label{
+
+    color:#FFD54F;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+/* ===========================
+        Inputs
+=========================== */
+
+.custom-input{
+
+    background:#2b2b2b !important;
+
+    color:white !important;
+
+    border:2px solid rgba(255,193,7,.18);
+
+    border-radius:15px;
+
+    padding:13px;
+
+}
+
+.custom-input::placeholder{
+
+    color:#bdbdbd;
+
+}
+
+.custom-input:focus{
+
+    background:#2b2b2b !important;
+
+    color:white !important;
+
+    border-color:#FFC107 !important;
+
+    box-shadow:
+
+            0 0 15px rgba(255,193,7,.35) !important;
+
+}
+
+/* Select */
+
+.custom-modal select{
+
+    background:#2b2b2b;
+
+    color:white;
+
+    border:2px solid rgba(255,193,7,.18);
+
+    border-radius:15px;
+
+}
+
+.custom-modal select:focus{
+
+    background:#2b2b2b;
+
+    color:white;
+
+    border-color:#FFC107;
+
+    box-shadow:
+
+            0 0 15px rgba(255,193,7,.35);
+
+}
+
+.custom-modal option{
+
+    background:#1b1b1b;
+
+    color:white;
+
+}
+
+/* ===========================
+        Modal Button
+=========================== */
+
+.custom-modal .btn-warning{
+
+    padding:14px;
+
+    font-size:17px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+}
+
+/* ===========================
+        Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#FFC107;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#1b1b1b;
+
+}
+
+/* =====================================================
+                RESPONSIVE
+===================================================== */
+
+@media(max-width:992px){
+
+    .hero-section{
+
+        text-align:center;
+
+        padding-top:140px;
+
+    }
+
+    .hero-section h1{
+
+        font-size:48px;
+
+    }
+
+    .hero-card{
+
+        margin-top:50px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .custom-navbar{
+
+        padding:15px;
+
+    }
+
+    .logo{
+
+        font-size:28px;
+
+    }
+
+    .hero-section{
+
+        padding-top:120px;
+
+    }
+
+    .hero-section h1{
+
+        font-size:38px;
+
+    }
+
+    .section-heading h2{
+
+        font-size:34px;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .feature-card{
+
+        padding:28px;
+
+    }
+
+    .tech-card{
+
+        padding:24px 12px;
+
+    }
+
+    .custom-modal .modal-body{
+
+        padding:20px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .hero-section h1{
+
+        font-size:32px;
+
+    }
+
+    .hero-card{
+
+        padding:30px;
+
+    }
+
+    .hero-icon{
+
+        font-size:48px;
+
+    }
+
+    .feature-card i{
+
+        font-size:42px;
+
+    }
+
+    .tech-card i{
+
+        font-size:40px;
+
+    }
+
+}

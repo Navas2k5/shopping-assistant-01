@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>ShopAI Login</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          th:href="@{/css/login.css}">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <div class="container">
+
+        <a class="navbar-brand logo" href="#">
+            Shop<span>AI</span>
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end"
+             id="navbarNav">
+
+            <ul class="navbar-nav align-items-center">
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="/about">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-3">
+                    <button
+                            class="btn btn-outline-warning rounded-pill px-4"
+                            data-bs-toggle="modal"
+                            data-bs-target="#loginModal">
+
+                        Login
+
+                    </button>
+                </li>
+
+                <li class="nav-item ms-lg-3">
+                    <a th:href="@{/register}"
+                        class ="btn btn-warning rounded-pill px-4">
+                        Register
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <span class="hero-badge">
+
+                    AI Powered Shopping
+
+                </span>
+
+                <h1>
+
+                    Discover Smarter Shopping
+                    <span>with ShopAI</span>
+
+                </h1>
+
+                <p>
+
+                    ShopAI uses Gemini AI to understand your shopping
+                    preferences, favourite brands, purchase history
+                    and budget to recommend products that truly
+                    match your interests.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#features"
+                       class="btn btn-warning btn-lg rounded-pill">
+
+                        Explore Features
+
+                    </a>
+
+                    <button
+                            class="btn btn-outline-light btn-lg rounded-pill"
+                            data-bs-toggle="modal"
+                            data-bs-target="#loginModal">
+
+                        Login
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="hero-card">
+
+                    <div class="floating-circle circle1"></div>
+                    <div class="floating-circle circle2"></div>
+
+                    <i class="bi bi-stars hero-icon"></i>
+
+                    <h2>AI Shopping Assistant</h2>
+
+                    <ul>
+
+                        <li>✔ Personalized Recommendations</li>
+
+                        <li>✔ Intelligent Product Suggestions</li>
+
+                        <li>✔ Purchase History Analysis</li>
+
+                        <li>✔ Budget Based Shopping</li>
+
+                        <li>✔ Gemini Powered Chat Assistant</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="features" class="features-section">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span>WHY SHOPAI?</span>
+
+            <h2>
+
+                Smart Shopping Experience
+
+            </h2>
+
+            <p>
+
+                Everything you need for an intelligent
+                shopping experience.
+
+            </p>
+
+        </div>
+
+        <div class="row g-4 mt-4">
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="bi bi-cpu-fill"></i>
+
+                    <h4>
+
+                        AI Recommendation
+
+                    </h4>
+
+                    <p>
+
+                        Personalized product suggestions
+                        generated using Gemini AI.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="bi bi-chat-dots-fill"></i>
+
+                    <h4>
+
+                        AI Assistant
+
+                    </h4>
+
+                    <p>
+
+                        Chat naturally and receive
+                        intelligent shopping guidance.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="bi bi-clock-history"></i>
+
+                    <h4>
+
+                        Purchase History
+
+                    </h4>
+
+                    <p>
+
+                        Previous purchases help generate
+                        better recommendations.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="feature-card">
+
+                    <i class="bi bi-cash-stack"></i>
+
+                    <h4>
+
+                        Budget Friendly
+
+                    </h4>
+
+                    <p>
+
+                        Products are recommended within
+                        your preferred budget.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= TECHNOLOGIES ================= -->
+
+<section class="technology-section">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span>TECH STACK</span>
+
+            <h2>Powered By Modern Technologies</h2>
+
+            <p>
+                ShopAI combines modern backend technologies with
+                Generative AI to deliver intelligent shopping
+                recommendations.
+            </p>
+
+        </div>
+
+        <div class="row g-4 mt-4">
+
+            <div class="col-lg-2 col-md-4 col-6">
+                <div class="tech-card">
+                    <i class="bi bi-cup-hot-fill"></i>
+                    <h5>Spring Boot</h5>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+                <div class="tech-card">
+                    <i class="bi bi-database-fill"></i>
+                    <h5>Hibernate</h5>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+                <div class="tech-card">
+                    <i class="bi bi-server"></i>
+                    <h5>MySQL</h5>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+                <div class="tech-card">
+                    <i class="bi bi-file-code-fill"></i>
+                    <h5>Thymeleaf</h5>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+                <div class="tech-card">
+                    <i class="bi bi-bootstrap-fill"></i>
+                    <h5>Bootstrap</h5>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+                <div class="tech-card">
+                    <i class="bi bi-stars"></i>
+                    <h5>Gemini AI</h5>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= LOGIN MODAL ================= -->
+
+<div class="modal fade"
+     id="loginModal"
+     tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content custom-modal">
+
+            <div class="modal-header border-0">
+
+                <h4 class="fw-bold">
+
+                    <i class="bi bi-box-arrow-in-right text-warning"></i>
+
+                    Login
+
+                </h4>
+
+                <button class="btn-close btn-close-white"
+                        data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <form th:action="@{/login}"
+                  method="post">
+
+                <div class="modal-body">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Email
+
+                        </label>
+
+                        <input
+                                type="email"
+                                class="form-control custom-input"
+                                name="username"
+                                placeholder="Enter email"
+                                required>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Password
+
+                        </label>
+
+                        <input
+                                type="password"
+                                class="form-control custom-input"
+                                name="password"
+                                placeholder="Enter password"
+                                required>
+
+                    </div>
+
+                </div>
+
+                <div class="modal-footer border-0">
+
+                    <button
+                            class="btn btn-warning w-100 rounded-pill">
+
+                        Login
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer-section">
+
+    <div class="container text-center">
+
+        <h4>
+
+            Shop<span>AI</span>
+
+        </h4>
+
+        <p>
+
+            Personalized Shopping Experience Powered by Gemini AI
+
+        </p>
+
+        <small>
+
+            Developed by Muhammed Navas
+
+            <br>
+
+            Computer Science Engineering
+
+        </small>
+
+    </div>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

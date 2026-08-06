@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:
+            radial-gradient(circle at top left,#ffd54f33 0%,transparent 30%),
+            radial-gradient(circle at bottom right,#ffca2833 0%,transparent 25%),
+            #0f1117;
+
+    color:white;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+}
+
+/* ================= BACKGROUND ================= */
+
+.background-glow{
+
+    position:fixed;
+
+    width:450px;
+    height:450px;
+
+    background:#ffc107;
+
+    filter:blur(180px);
+
+    opacity:.10;
+
+    top:-150px;
+    right:-150px;
+
+    z-index:-1;
+}
+
+/* ================= NAVBAR ================= */
+
+.top-navbar{
+
+    background:#111827dd;
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(255,193,7,.2);
+}
+
+.logo{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:#fff !important;
+
+    text-decoration:none;
+}
+
+.logo span{
+
+    color:#ffc107;
+}
+
+.nav-link{
+
+    color:#eee !important;
+
+    font-weight:500;
+
+    transition:.3s;
+}
+
+.nav-link:hover{
+
+    color:#ffc107 !important;
+}
+
+/* ================= HERO ================= */
+
+.hero-section{
+
+    padding:120px 0 60px;
+}
+
+.hero-card{
+
+    text-align:center;
+
+    background:#171c26;
+
+    border:1px solid rgba(255,193,7,.2);
+
+    border-radius:25px;
+
+    padding:60px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    background:#ffc107;
+
+    color:#111;
+
+    padding:8px 20px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+}
+
+.hero-card h1{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+}
+
+.hero-card h1 span{
+
+    color:#ffc107;
+}
+
+.hero-card p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#cfcfcf;
+
+    line-height:1.8;
+}
+
+/* ================= REGISTER CARD ================= */
+
+.register-card{
+
+    background:#171c26;
+
+    border-radius:30px;
+
+    padding:50px;
+
+    border:1px solid rgba(255,193,7,.2);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+.register-card h2{
+
+    font-weight:700;
+}
+
+.register-card p{
+
+    color:#cfcfcf;
+}
+
+/* ================= FORM ================= */
+
+.form-label{
+
+    color:#ffc107;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+}
+
+.custom-input{
+
+    background:#111827 !important;
+
+    color:#fff !important;
+
+    border:1px solid rgba(255,193,7,.35);
+
+    border-radius:14px;
+
+    padding:14px 18px;
+
+    transition:.3s;
+}
+
+.custom-input:focus{
+
+    border-color:#ffc107;
+
+    box-shadow:0 0 0 .18rem rgba(255,193,7,.2);
+
+    background:#111827;
+
+    color:white;
+}
+
+.custom-input::placeholder{
+
+    color:#9ca3af;
+}
+
+.form-select{
+
+    color:white !important;
+}
+
+.form-select option{
+
+    background:#171c26;
+
+    color:white;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-warning{
+
+    background:#ffc107;
+
+    border:none;
+
+    color:#111;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.btn-warning:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 28px rgba(255,193,7,.35);
+}
+
+.btn-outline-warning{
+
+    border:2px solid #ffc107;
+
+    color:#ffc107;
+
+    font-weight:600;
+}
+
+.btn-outline-warning:hover{
+
+    background:#ffc107;
+
+    color:#111;
+}
+
+/* ================= FOOTER ================= */
+
+.footer-section{
+
+    padding:60px 0;
+
+    margin-top:80px;
+
+    border-top:1px solid rgba(255,193,7,.15);
+
+    background:#111827;
+}
+
+.footer-section h4{
+
+    color:#ffc107;
+
+    font-weight:700;
+}
+
+.footer-section p{
+
+    color:#d1d5db;
+
+    margin-top:10px;
+}
+
+.footer-section small{
+
+    color:#9ca3af;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .hero-card{
+
+        padding:40px 25px;
+    }
+
+    .hero-card h1{
+
+        font-size:2.2rem;
+    }
+
+    .register-card{
+
+        padding:30px 20px;
+    }
+
+}
